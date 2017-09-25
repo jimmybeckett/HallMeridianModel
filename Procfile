@@ -1,1 +1,1 @@
-web: java -jar target/HallMeridianModel-1.0.jar
+web: java -jar target/hallmeridianmodel-1.0.jar
