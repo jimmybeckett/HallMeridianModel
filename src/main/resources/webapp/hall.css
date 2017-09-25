@@ -1,0 +1,18 @@
+body {
+    overflow: hidden;
+}
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+#clock {
+    margin-top: 1%;
+    height: 80%;
+}
+
+#arrow {
+    margin-top: 1%;
+    height: 20%;
+}
