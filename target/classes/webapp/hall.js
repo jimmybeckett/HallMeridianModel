@@ -18,7 +18,8 @@ var sunInt;
 
 function getTimes(state, city, millis, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://***.herokuapp.com:443//getSSTimes", true);
+//    xhr.open("GET", "https://***.herokuapp.com:443//getSSTimes", true);
+console.log("hello there!");
     var date = new Date();
     xhr.setRequestHeader("state", state);
     xhr.setRequestHeader("city", city);
