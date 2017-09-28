@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         Logger logger = LoggerFactory.getLogger(Main.class);
         Spark.staticFileLocation("/webapp");
-//        port(getHerokuAssignedPort());
+        port(getHerokuAssignedPort());
 
         get("/getSSTimes", (req, res) -> {
             logger.info("get request to /getSSTimes");
