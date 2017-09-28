@@ -18,7 +18,7 @@ var sunInt;
 
 function getTimes(state, city, millis, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://HallMeridianModel/getSSTimes", true);
+    xhr.open("GET", "http://hallmeridianmodel.herokuapp.com//getSSTimes", true);
     var date = new Date();
     xhr.setRequestHeader("state", state);
     xhr.setRequestHeader("city", city);
