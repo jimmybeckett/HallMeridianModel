@@ -178,7 +178,7 @@ function rotateTime() {
     var date = new Date();
     var degree;
     for (var i = 0; i < 2; i++) {
-        degree = (date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds()) / 240 * -1;
+        degree = (date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds()) / 240;
         document.getElementsByClassName("afternoonMorningCircle")[i].setAttribute("transform", "rotate(" + (degree + 90) + " 60 60)");
     }
     for (var i = 0; i < 6; i++) {

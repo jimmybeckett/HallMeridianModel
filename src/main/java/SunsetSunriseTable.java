@@ -15,7 +15,7 @@ public class SunsetSunriseTable {
             logger.error(e.getMessage());
         }
         table = new Tuple[12][31];
-        table[1] = year % 4 != 0 ? new Tuple[28] : new Tuple[29];
+        table[1] = year % 4 != 0 && year % 100 != 0 && year % 400 != 0 ? new Tuple[28] : new Tuple[29];
         table[3] = new Tuple[30];
         table[5] = new Tuple[30];
         table[8] = new Tuple[30];
@@ -28,7 +28,7 @@ public class SunsetSunriseTable {
                 timeIndex += 23;
                 switch (day) {
                     case 27: {
-                        timeIndex += year % 4 == 0 ? 0 : -2;
+                        timeIndex += year % 4 != 0 && year % 100 != 0 && year % 400 != 0 ? 0 : -2;
                         timeIndex += month == 0 ? 2 : 0;
                         break;
                     }
