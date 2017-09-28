@@ -24,8 +24,10 @@
         <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
     </properties>
 
-    <!--Project dependencies-->
     <dependencies>
+
+        <!--Project dependencies-->
+
         <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-core</artifactId>
@@ -42,10 +44,8 @@
             <version>2.8.1</version>
         </dependency>
 
-    </dependencies>
-
-    <dependencies>
         <!-- Spring and Spring Boot dependencies -->
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
