@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var arrow = document.getElementById("arrow");
     clock.style.width = window.innerHeight * .8 + "px";
     arrow.style.width = window.innerHeight * .15 + "px";
-    setInterval(rotateTime, 10);
+    setInterval(rotateTime, 1000);
     window.addEventListener("resize", function () {
         clock.style.width = window.innerHeight * .8 + "px";
         arrow.style.width = window.innerHeight * .15 + "px";
@@ -36,7 +36,7 @@ function getTimes(state, city, millis, callback) {
                     times.tomorrow.sunrise += 100;
                     times.tomorrow.sunset += 100;
                 }
-                sunInt = setInterval(callback, 10);
+                sunInt = setInterval(callback, 1000);
             } else {
                 console.error(xhr.status);
             }
@@ -79,7 +79,6 @@ function rotateSun() {
     }
     var t1Sec = convertToSeconds(t1);
     var degree = (date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds() - t1Sec) / dSec * 180;
-    console.log(degree);
     degree += !offset ? 180 : 0;
 
     for (var i = 0; i < 2; i++) {

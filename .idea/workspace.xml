@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e906a994-dec6-44aa-93b0-e3924af665c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/webapp/hall.js" afterPath="$PROJECT_DIR$/src/main/resources/webapp/hall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/resources/webapp/index.html" />
     </list>
     <ignored path="HallMeridianModel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +45,8 @@
       <file leaf-file-name="hall.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/webapp/hall.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+            <state relative-caret-position="374">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -1228,8 +1227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/webapp/hall.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        <state relative-caret-position="374">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding />
         </state>
       </provider>
