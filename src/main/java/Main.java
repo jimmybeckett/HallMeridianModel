@@ -20,17 +20,15 @@ public class Main {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(Long.parseLong(req.headers("millis")));
                 Tuple[] table = new Tuple[3];
-                calendar.add(Calendar.DAY_OF_MONTH, -1);
-                table[1] = new SunsetSunriseTable(calendar.get(Calendar.YEAR), req.headers("state"), req.headers("city")).getTable()[calendar.get(Calendar.MONTH)][calendar.get(Calendar.DAY_OF_MONTH)];
+                table[1] = new SunsetSunriseTable(calendar.get(Calendar.YEAR), req.headers("state"), req.headers("city")).getTable()[calendar.get(Calendar.MONTH)][calendar.get(Calendar.DAY_OF_MONTH) - 1];
                 calendar.add(Calendar.DAY_OF_MONTH, 1);
-                table[2] = new SunsetSunriseTable(calendar.get(Calendar.YEAR), req.headers("state"), req.headers("city")).getTable()[calendar.get(Calendar.MONTH)][calendar.get(Calendar.DAY_OF_MONTH)];
+                table[2] = new SunsetSunriseTable(calendar.get(Calendar.YEAR), req.headers("state"), req.headers("city")).getTable()[calendar.get(Calendar.MONTH)][calendar.get(Calendar.DAY_OF_MONTH) - 1];
                 calendar.add(Calendar.DAY_OF_MONTH, -2);
-                table[0] = new SunsetSunriseTable(calendar.get(Calendar.YEAR), req.headers("state"), req.headers("city")).getTable()[calendar.get(Calendar.MONTH)][calendar.get(Calendar.DAY_OF_MONTH)];
+                table[0] = new SunsetSunriseTable(calendar.get(Calendar.YEAR), req.headers("state"), req.headers("city")).getTable()[calendar.get(Calendar.MONTH)][calendar.get(Calendar.DAY_OF_MONTH) - 1];
                 return table;
             } catch (Exception e) {
                 logger.error(e.toString());
                 logger.error(Arrays.toString(e.getStackTrace()));
-                logger.error(e.getMessage());
                 return 500;
             }
         }, new JsonUtil());
