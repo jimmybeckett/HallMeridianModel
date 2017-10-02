@@ -16,7 +16,7 @@ public class Main {
 
         get("/getSSTimes", (req, res) -> {
             logger.info("get request to /getSSTimes");
-            res.header("Access-Control-Allow-Origin", "https://hallmeridianmodel.herokuapp.com/");
+            res.header("Access-Control-Allow-Origin", "*");
             try {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(Long.parseLong(req.headers("millis")));
