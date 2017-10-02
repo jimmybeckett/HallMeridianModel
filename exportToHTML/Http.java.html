@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Http.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Http.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">import </span><span class="s1">java.io.*; 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">import </span><span class="s1">java.net.HttpURLConnection; 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">java.net.URL; 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">java.net.URLConnection; 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">java.nio.charset.StandardCharsets; 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">java.util.*; 
+<a name="l7"><span class="ln">7    </span></a> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">public class </span><span class="s1">Http { 
+<a name="l10"><span class="ln">10   </span></a> 
+<a name="l11"><span class="ln">11   </span></a>    </span><span class="s0">public static </span><span class="s1">String get(String URL, Map&lt;String, String&gt; params) </span><span class="s0">throws </span><span class="s1">Exception { 
+<a name="l12"><span class="ln">12   </span></a>        StringBuilder sb = </span><span class="s0">new </span><span class="s1">StringBuilder(URL); 
+<a name="l13"><span class="ln">13   </span></a>        sb.append(</span><span class="s2">&quot;?&quot;</span><span class="s1">); 
+<a name="l14"><span class="ln">14   </span></a>        </span><span class="s0">for </span><span class="s1">(Map.Entry&lt;String, String&gt; entry : params.entrySet()) { 
+<a name="l15"><span class="ln">15   </span></a>            sb.append(entry.getKey()); 
+<a name="l16"><span class="ln">16   </span></a>            sb.append(</span><span class="s2">&quot;=&quot;</span><span class="s1">); 
+<a name="l17"><span class="ln">17   </span></a>            sb.append(entry.getValue()); 
+<a name="l18"><span class="ln">18   </span></a>            sb.append(</span><span class="s2">&quot;&amp;&quot;</span><span class="s1">); 
+<a name="l19"><span class="ln">19   </span></a>        } 
+<a name="l20"><span class="ln">20   </span></a>        URL myURL = </span><span class="s0">new </span><span class="s1">URL(sb.toString()); 
+<a name="l21"><span class="ln">21   </span></a>        URLConnection yc = myURL.openConnection(); 
+<a name="l22"><span class="ln">22   </span></a>        BufferedReader in = </span><span class="s0">new </span><span class="s1">BufferedReader(</span><span class="s0">new </span><span class="s1">InputStreamReader( 
+<a name="l23"><span class="ln">23   </span></a>                yc.getInputStream())); 
+<a name="l24"><span class="ln">24   </span></a>        String inputLine; 
+<a name="l25"><span class="ln">25   </span></a>        sb = </span><span class="s0">new </span><span class="s1">StringBuilder(); 
+<a name="l26"><span class="ln">26   </span></a>        </span><span class="s0">while </span><span class="s1">((inputLine = in.readLine()) != </span><span class="s0">null</span><span class="s1">) 
+<a name="l27"><span class="ln">27   </span></a>            sb.append(inputLine); 
+<a name="l28"><span class="ln">28   </span></a>        in.close(); 
+<a name="l29"><span class="ln">29   </span></a>        </span><span class="s0">return </span><span class="s1">sb.toString(); 
+<a name="l30"><span class="ln">30   </span></a>    } 
+<a name="l31"><span class="ln">31   </span></a> 
+<a name="l32"><span class="ln">32   </span></a>} 
+<a name="l33"><span class="ln">33   </span></a></span></pre>
+</body>
+</html>

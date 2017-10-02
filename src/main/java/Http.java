@@ -8,32 +8,6 @@ import java.util.*;
 
 public class Http {
 
-    public static String post(String URL, String JSON) throws Exception {
-        URL myURL = new URL(URL);
-        URLConnection con = myURL.openConnection();
-        HttpURLConnection http = (HttpURLConnection) con;
-        http.setRequestMethod("POST");
-        http.setDoOutput(true);
-        byte[] out = JSON.getBytes(StandardCharsets.UTF_8);
-        int length = out.length;
-        http.setFixedLengthStreamingMode(length);
-        http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-        http.connect();
-        try (OutputStream os = http.getOutputStream()) {
-            os.write(out);
-        }
-        InputStream is = con.getInputStream();
-        BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-        String line;
-        StringBuilder response = new StringBuilder();
-        while((line = rd.readLine()) != null) {
-            response.append(line);
-            response.append('\r');
-        }
-        rd.close();
-        return response.toString();
-    }
-
     public static String get(String URL, Map<String, String> params) throws Exception {
         StringBuilder sb = new StringBuilder(URL);
         sb.append("?");
