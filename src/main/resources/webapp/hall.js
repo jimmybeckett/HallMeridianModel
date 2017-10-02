@@ -27,7 +27,6 @@ function getTimes(state, city, millis, callback) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 times = new SSTime(JSON.parse(xhr.responseText));
-                console.log(times);
                 var d = date.getMonth() * 100 + date.getDate() + date.getHours() / 10;
                 if (d > 212.2 && d < 1005.2) { //check for daylight savings time
                     times.yesterday.sunrise += 100;
